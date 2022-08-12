@@ -1,0 +1,10 @@
+name: build
+
+on: [push, pull_request]
+jobs:
+  build-source:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 'pull repo'
+        uses: actions/checkout@v2
+      - run: ./build.sh
