@@ -4,7 +4,10 @@ on: [push, pull_request]
 jobs:
   build-source:
     runs-on: ubuntu-latest
+    container: fedora:36
     steps:
       - name: 'pull repo'
         uses: actions/checkout@v2
-      - run: chmod +x build.sh && ./build.sh
+      - run: |
+          dnf update -y \
+          chmod +x build.sh && ./build.sh
