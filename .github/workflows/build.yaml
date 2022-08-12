@@ -7,4 +7,4 @@ jobs:
     steps:
       - name: 'pull repo'
         uses: actions/checkout@v2
-      - run: ./build.sh
+      - run: chmod +x build.sh && ./build.sh
